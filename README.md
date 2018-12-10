@@ -1,2 +1,2 @@
 # CSE6061
-Probabilistic Inference for Computer Vision
+(2018-2)Probabilistic Inference for Computer Vision
