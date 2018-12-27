@@ -1,7 +1,7 @@
 import numpy as np
 from math import gamma
 
-class Gaussian_NIW_Model:
+class Gaussian_NIW_Model: # P(x|theta) ~ Gaussian, P(theta) ~ Normal Inverse Wishart
     def __init__(self):
         pass
     def _multivariate_t_distribution(self, x, mu, Sigma, df):
@@ -84,7 +84,7 @@ class Gaussian_NIW_Model:
         self.acc = (self.TP+self.TN)/(self.TN+self.TP+self.FN+self.FP)
         
     
-class Gaussian_NIG_Model_for_R:
+class Gaussian_NIG_Model_for_R: # P(x|theta) ~ Gaussian, P(theta) ~ Normal Inverse Gamma
     def __init__(self):
         pass
          
@@ -138,6 +138,3 @@ class Gaussian_NIG_Model_for_R:
         self.FP, self.FN = np.count_nonzero(falsepositive), np.count_nonzero(falsenegative)
         self.Precision, self.Recall = self.TP/(self.TP+self.FP), self.TP/(self.TP+self.FN)
         self.acc = (self.TP+self.TN)/(self.TN+self.TP+self.FN+self.FP)
-        
-        
-        

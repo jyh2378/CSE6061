@@ -5,7 +5,7 @@ class Gaussian_Model:
     def __init__(self):
         pass
     
-    def _multivariate_t_distribution(self, x, mu, Sigma, df):
+    def _multivariate_t_distribution_pdf(self, x, mu, Sigma, df):
         '''
         input:
             x = parameter (n-d numpy array; will be forced to 2d)
@@ -15,8 +15,6 @@ class Gaussian_Model:
         '''
         x = np.atleast_2d(x) # requires x as 2d
         nD = Sigma.shape[0] # dimensionality
-        if(df > 300):
-            df = 300
         numerator = np.float64(gamma(1.0 * (nD + df) / 2.0))
         
         denominator = (
@@ -28,13 +26,13 @@ class Gaussian_Model:
                          )
                 )
         return 1.0 * numerator / denominator
-    
+
     def _normpdf(self, x, mu, var):
         denominator = np.sqrt(2*np.pi*var)
         numerator = ((x - mu)**2)/var
         numerator = np.exp(-0.5 * numerator)
         return numerator/denominator
-    
+
     def _multinormpdf(self, x, mu, var):
         mu = np.asarray(mu)
         var = np.asarray(var)
