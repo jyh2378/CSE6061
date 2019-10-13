@@ -5,6 +5,8 @@ import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib.patches import Ellipse
 
+# Data : Face Detection Data Set and Benchmark (FDDB)
+
 # in
 fddb_paths = 'data/paths.txt'
 fddb_annotations = 'data/annotations.txt'
