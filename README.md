@@ -4,3 +4,5 @@
 Model for detecting human skin by using (generative) probabilistic approach
 
 (확률 모델을 사용한 모델을 사용한 피부검출 모델)
+
+<img src="./img1.png" width="100%" height="100%">
